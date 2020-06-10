@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TOXIC SENTIMENT ANALYSIS</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+	<header>
+		<div class="container">
+		<div id="brandname">
+			Sentiment Analysis - By Sourav Banerjee
+		</div>
+		<h2>Toxic comments detection</h2>
+		
+	</div>
+	</header>
+
+
+	<img src={{ url_for('static', filename='toxic_comments.jpg') }} alt="toxic-comments" width="400" height="225">
+
+	<div class="ml-container">
+
+		<form action="{{ url_for('predict')}}" method="POST">
+		<p>Enter Your Comment Here</p>
+		<!-- <input type="text" name="comment"/> -->
+		<textarea name="comment" rows="4" cols="50"></textarea>
+		<br/>
+
+		<input type="submit" class="btn-info" value="predict">
+		
+        </form>
+	</div>
+	
+	
+    <div class="Toxic rates">&nbsp;</div>
+    
+    <table style="height: 152px;" width="286">
+        <tbody>
+        <tr>
+        <td style="width: 134px;"><strong>label1:</strong></td>
+        <td style="width: 136px;">{{ Score1 }}<br></td>
+        </tr>
+        <tr>
+        <td style="width: 134px;"><strong>label2:</strong></td>
+        <td style="width: 136px;">{{ Score2 }}<br></td>
+        </tr>
+        <tr>
+        <td style="width: 134px;"><strong>label3:</strong></td>
+        <td style="width: 136px;">{{ Score3 }}<br></td>
+        </tr>
+        <tr>
+        <td style="width: 134px;"><strong>label4:</strong></td>
+        <td style="width: 136px;">{{ Score4 }}<br></td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</body>
+</html>
